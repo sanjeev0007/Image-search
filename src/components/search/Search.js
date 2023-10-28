@@ -8,7 +8,7 @@ import ImageResults from '../image-results/ImageResults';
 class Search extends Component {
   state = {
     searchText: '',
-    amount: 15,
+    amount: [],
     apiUrl: 'https://pixabay.com/api',
     apiKey: '16445805-83f5615227a72dcc7a2bd97e5',//create your api 
     images: []
@@ -32,12 +32,14 @@ class Search extends Component {
     });
   };
 //cat ca
-  onAmountChange = (e, index, value) => this.setState({ amount: value });
+  onAmountChange = (e, index, value) => this.setState({ 
+    amount: value
+  });
 
   render() {
-    console.log(this.state.images);
+    // console.log(this.state.images);
     return (
-      <div>
+      <div style={{width:'900px',margin: '0 auto', padding: '10px', border: '1px solid lightgrey'}}>
         <TextField
           name="searchText"
           value={this.state.searchText}
